@@ -2,8 +2,8 @@
 /*
 Plugin Name: Import External Images
 Plugin URI:  http://martythornley.com
-Version: 1.3
-Description: Examines the text of a post and makes local copies of all the images linked though IMG tags, adding them as gallery attachments on the post itself.
+Version: 1.3rhd.1
+Description: (Customized for Roundhouse Designs) Examines the text of a post and makes local copies of all the images linked though IMG tags, adding them as gallery attachments on the post itself.
 Author: Marty Thornley
 Author URI: http://martythornley.com
 License: GPLv2 or later
@@ -31,7 +31,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 	$external_image_count = 0;	
 	
-	define( 'EXTERNAL_IMAGES_MAX_POSTS_COUNT' , 50 );
+	define( 'EXTERNAL_IMAGES_MAX_POSTS_COUNT' , 200 );
 	define( 'EXTERNAL_IMAGES_MAX_COUNT' , 20 );
 	define( 'EXTERNAL_IMAGES_DIR' , plugin_dir_path( __FILE__ ) );
 	define( 'EXTERNAL_IMAGES_URL' , plugins_url( basename( dirname( __FILE__ ) ) ) );
@@ -468,7 +468,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 			
 			if ( is_array( $posts_to_fix ) ) {
 				$html .= '<p class="howto">Please note that this can take a long time for sites with a lot of posts. You can also edit each post and import images one post at a time.</p>';
-				$html .= '<p class="howto">We will process up to 50 posts at a time. You should <a class="button-secondary" href="'.admin_url('upload.php?page=external_image').'">refresh the page</a> when done to check if you have more than 50 posts.</p>';
+				$html .= '<p class="howto">We will process up to '.EXTERNAL_IMAGES_MAX_POSTS_COUNT.' posts at a time. You should <a class="button-secondary" href="'.admin_url('upload.php?page=external_image').'">refresh the page</a> when done to check if you have more than 50 posts.</p>';
 				$html .= '<p class="howto">Only '.EXTERNAL_IMAGES_MAX_COUNT.' images per post will be imported at a time to keep things from taking too long. For posts with more than that, they will get added back into the list when you refresh or come back and try again.</p>';
 				
 				$html .= $import;
