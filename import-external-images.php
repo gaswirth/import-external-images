@@ -468,7 +468,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 			
 			if ( is_array( $posts_to_fix ) ) {
 				$html .= '<p class="howto">Please note that this can take a long time for sites with a lot of posts. You can also edit each post and import images one post at a time.</p>';
-				$html .= '<p class="howto">We will process up to '.EXTERNAL_IMAGES_MAX_POSTS_COUNT.' posts at a time. You should <a class="button-secondary" href="'.admin_url('upload.php?page=external_image').'">refresh the page</a> when done to check if you have more than 50 posts.</p>';
+				$html .= '<p class="howto">We will process up to '.EXTERNAL_IMAGES_MAX_POSTS_COUNT.' posts at a time. You should <a class="button-secondary" href="'.admin_url('upload.php?page=external_image').'">refresh the page</a> when done to check if you have more than '.EXTERNAL_IMAGES_MAX_POSTS_COUNT.' posts.</p>';
 				$html .= '<p class="howto">Only '.EXTERNAL_IMAGES_MAX_COUNT.' images per post will be imported at a time to keep things from taking too long. For posts with more than that, they will get added back into the list when you refresh or come back and try again.</p>';
 				
 				$html .= $import;
